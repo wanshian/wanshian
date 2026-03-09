@@ -10,11 +10,7 @@
 </head>
 <link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/favicon.png">
-    <script>
-        if (sessionStorage.getItem("hasSeenLoader")) {
-            document.documentElement.classList.add('no-loader');
-        }
-    </script>
+
 <body class="bg-slate-50 text-slate-900 font-sans">
 
     <div id="header-placeholder"></div>
@@ -72,25 +68,4 @@
         document.getElementById('preloader').style.display = 'none';
     }
 </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const loader = document.getElementById("loader-wrapper");
-        
-        // 檢查瀏覽器內部的「快閃記憶體」，看看這回合是否看過動畫
-        if (sessionStorage.getItem("hasSeenLoader")) {
-            // 如果看過了，直接移除動畫層，不留痕跡
-            loader.style.display = "none";
-        } else {
-            // 如果是第一次進站，等網頁載入完畢後執行動畫
-            window.addEventListener("load", function() {
-                setTimeout(() => {
-                    loader.classList.add("loader-hidden");
-                    // 標記「已經看過了」，直到關閉瀏覽器分頁為止
-                    sessionStorage.setItem("hasSeenLoader", "true");
-                }, 1500);
-            });
-        }
-    });
-</script>
 </html>
-

@@ -10,7 +10,11 @@
 </head>
 <link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/favicon.png">
-
+    <script>
+        if (sessionStorage.getItem("hasSeenLoader")) {
+            document.documentElement.classList.add('no-loader');
+        }
+    </script>
 <body class="bg-white text-slate-900 font-sans">
 
     <div id="header-placeholder"></div>
@@ -132,3 +136,4 @@
     }
 </script>
 </html>
+
